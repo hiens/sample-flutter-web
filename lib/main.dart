@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:js' as js;
+
+import 'package:flutter/material.dart';
 import 'package:wellcare_checkout/wellcare_checkout.dart';
 
 void main() {
