@@ -1,3 +1,3 @@
 library wellcare_checkout;
 
-export "screens/checkout.dart";
+export 'screens/checkout.dart';

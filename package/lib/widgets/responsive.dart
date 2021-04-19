@@ -20,7 +20,22 @@ class ResponsiveWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext ctx, BoxConstraints constraints) {
-        if (constraints.minWidth >= 1536) {
+        if (constraints.maxWidth < 640) {
+          // xs
+          return childXs;
+        } else if (constraints.maxWidth < 768) {
+          // sm
+          return childSm ?? childXs;
+        } else if (constraints.maxWidth < 1024) {
+          // md
+          return childMd ?? childSm ?? childXs;
+        } else if (constraints.maxWidth < 1280) {
+          // lg
+          return childLg ?? childMd ?? childSm ?? childXs;
+        } else if (constraints.maxWidth < 1536) {
+          // xl
+          return childXl ?? childLg ?? childMd ?? childSm ?? childXs;
+        } else {
           // 2xl
           return child2Xl ??
               childXl ??
@@ -28,21 +43,6 @@ class ResponsiveWidget extends StatelessWidget {
               childMd ??
               childSm ??
               childXs;
-        } else if (constraints.minWidth >= 1280) {
-          // xl
-          return childXl ?? childLg ?? childMd ?? childSm ?? childXs;
-        } else if (constraints.minWidth >= 1024) {
-          // lg
-          return childLg ?? childMd ?? childSm ?? childXs;
-        } else if (constraints.minWidth >= 768) {
-          // md
-          return childMd ?? childSm ?? childXs;
-        } else if (constraints.minWidth >= 640) {
-          // sm
-          return childSm ?? childXs;
-        } else {
-          // xs
-          return childXs;
         }
       },
     );

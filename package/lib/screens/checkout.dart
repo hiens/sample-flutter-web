@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../widgets/responsive.dart';
+import '../widgets/responsive.dart';
 
 part 'steps/step1.dart';
 part 'steps/step2.dart';
 part 'steps/step3.dart';
-part 'steps/step4.dart';
-part 'steps/step5.dart';
 
 class CheckoutScreen extends StatefulWidget {
   @override
@@ -24,12 +23,26 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             centerTitle: true,
             backgroundColor: Colors.white,
             elevation: 0,
-            titleTextStyle: const TextStyle(color: Colors.black),
+            leading: BackButton(color: Colors.black),
+            actions: <IconButton>[
+              IconButton(
+                icon: Icon(Icons.close),
+                color: Colors.black,
+                onPressed: () {},
+              ),
+            ],
             title: Obx(() {
               return Column(
                 children: <Widget>[
-                  Text(controller.title),
-                  Text('Step ${controller.step}/5'),
+                  Text(
+                    controller.title,
+                    style: TextStyle(color: Colors.black, fontSize: 15),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    'Step ${controller.step + 1}/3',
+                    style: TextStyle(color: Colors.grey, fontSize: 12),
+                  ),
                 ],
               );
             }),
@@ -37,20 +50,22 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           body: Column(
             children: <Widget>[
               Obx(() =>
-                  LinearProgressIndicator(value: (controller.step + 1) / 5)),
+                  LinearProgressIndicator(value: (controller.step + 1) / 3)),
               Expanded(
                 child: Obx(() {
                   switch (controller.step) {
                     case 0:
-                      return CheckoutStep1();
+                      return CheckoutStep1(
+                        onSelected: controller.nextStep,
+                      );
                     case 1:
-                      return CheckoutStep2();
+                      return CheckoutStep2(
+                        onSelected: controller.nextStep,
+                      );
                     case 2:
-                      return CheckoutStep3();
-                    case 3:
-                      return CheckoutStep4();
-                    case 4:
-                      return CheckoutStep5();
+                      return CheckoutStep3(
+                        onRestart: controller.nextStep,
+                      );
                     default:
                       return const SizedBox();
                   }
@@ -81,4 +96,9 @@ class CheckoutController extends GetxController {
     'Delivery address',
     'Success',
   ];
+
+  /// Go to next step
+  Future<void> nextStep() async {
+    step = step < 2 ? step + 1 : 0;
+  }
 }
