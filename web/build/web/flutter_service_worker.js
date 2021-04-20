@@ -3,19 +3,22 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "version.json": "e7ee6d08fbaf6116d6ee6af117545ced",
-"index.html": "b2b42e3fdfeb543b11ed241f6afb8502",
-"/": "b2b42e3fdfeb543b11ed241f6afb8502",
-"styles.css": "6a545f7e99cce25b6781ba921ebeca8d",
-"main.dart.js": "b5e83648ac1151767d94b364bdfa0072",
+  "assets/AssetManifest.json": "079ca015d1a9b2f61009353c2f763f91",
+"assets/FontManifest.json": "7b2a36307916a9721811788013e65289",
+"assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
+"assets/NOTICES": "b8ca74ed128ae5e1a36244d9dd9165e2",
+"assets/packages/wellcare_checkout/assets/images/card-success.png": "a1a6351b7b6528f59626e2fb8366b771",
+"assets/packages/wellcare_checkout/assets/images/doge.jpg": "e1220d444aab36ca08f0c3e3a62cc37d",
+"assets/packages/wellcare_checkout/assets/images/vertical-credit-card.png": "ce560fd11bc0c1eaa325d000b8771600",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"manifest.json": "1708e65f932be1999f93554c189f7425",
-"assets/AssetManifest.json": "99914b932bd37a50b983c5e7c90ae93b",
-"assets/NOTICES": "c1d56a0e9137ba5f1df26906dbc4e969",
-"assets/FontManifest.json": "7b2a36307916a9721811788013e65289",
-"assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac"
+"index.html": "291812162134410fcc816795dc29fa1c",
+"/": "291812162134410fcc816795dc29fa1c",
+"main.dart.js": "d183d5f019f41da71056a2b8767b0338",
+"manifest.json": "9b2f6294beff40363b151341e85ba3f7",
+"styles.css": "002dd2ad8c89bd39d3c94ce28427a82b",
+"version.json": "e7ee6d08fbaf6116d6ee6af117545ced"
 };
 
 // The application shell files that are downloaded before a service worker can

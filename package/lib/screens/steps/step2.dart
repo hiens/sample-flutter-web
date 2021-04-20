@@ -74,8 +74,9 @@ class CheckoutStep2 extends StatelessWidget {
                       ),
                       child: ListTile(
                         leading: CircleAvatar(
-                          backgroundImage: NetworkImage(
-                            'https://avatarfiles.alphacoders.com/209/thumb-209215.jpg',
+                          backgroundImage: AssetImage(
+                            'assets/images/doge.jpg',
+                            package: 'wellcare_checkout',
                           ),
                         ),
                         trailing: Icon(Icons.chevron_right),

@@ -17,15 +17,17 @@ class CheckoutStep3 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ResponsiveWidget(
-                childXs: Image.network(
-                  'https://ouch-cdn.icons8.com/preview/708/5045569d-d7bf-463d-8015-f27219029ee4.png',
+                childXs: Image.asset(
+                  'assets/images/card-success.png',
                   width: Get.width * 3 / 4,
                   height: 150,
+                  package: 'wellcare_checkout',
                 ),
-                childSm: Image.network(
-                  'https://ouch-cdn.icons8.com/preview/708/5045569d-d7bf-463d-8015-f27219029ee4.png',
+                childSm: Image.asset(
+                  'assets/images/card-success.png',
                   width: 300,
                   height: 300,
+                  package: 'wellcare_checkout',
                 ),
               ),
               Text(

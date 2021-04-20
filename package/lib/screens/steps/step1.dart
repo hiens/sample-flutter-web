@@ -7,20 +7,17 @@ class CheckoutStep1 extends StatelessWidget {
   final String _title = 'Choose the card that fits your growth';
   final List<_CardItem> _cardItems = const <_CardItem>[
     _CardItem(
-      image:
-          'https://ei.marketwatch.com/Multimedia/2018/06/25/Photos/NS/MW-GL478_Card_B_20180625105902_NS.png?uuid=4c0f5000-7888-11e8-ba2c-ac162d7bc1f7',
+      image: 'assets/images/vertical-credit-card.png',
       title: 'One',
       subtitle: 'Pay up to 20.000\$ / month',
     ),
     _CardItem(
-      image:
-          'https://ei.marketwatch.com/Multimedia/2018/06/25/Photos/NS/MW-GL478_Card_B_20180625105902_NS.png?uuid=4c0f5000-7888-11e8-ba2c-ac162d7bc1f7',
+      image: 'assets/images/vertical-credit-card.png',
       title: 'Plus',
       subtitle: 'Pay up to 40.000\$ / month',
     ),
     _CardItem(
-      image:
-          'https://ei.marketwatch.com/Multimedia/2018/06/25/Photos/NS/MW-GL478_Card_B_20180625105902_NS.png?uuid=4c0f5000-7888-11e8-ba2c-ac162d7bc1f7',
+      image: 'assets/images/vertical-credit-card.png',
       title: 'X',
       subtitle: 'Pay up to 60.000\$ / month',
     ),
@@ -66,7 +63,10 @@ class CheckoutStep1 extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8),
                     child: ListTile(
-                      leading: Image.network(e.image),
+                      leading: Image.asset(
+                        e.image,
+                        package: 'wellcare_checkout',
+                      ),
                       trailing: Icon(Icons.chevron_right),
                       title: Text(e.title),
                       subtitle: Text(e.subtitle),
@@ -101,9 +101,10 @@ class CheckoutStep1 extends StatelessWidget {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
-                          Image.network(
+                          Image.asset(
                             e.image,
                             height: 300,
+                            package: 'wellcare_checkout',
                           ),
                           const SizedBox(height: 8),
                           Text(
